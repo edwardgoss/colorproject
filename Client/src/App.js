@@ -17,20 +17,20 @@ function App() {
     });
   };
   const savePalette = (newPalette) => {
-    axios.post("http://localhost:5000/palette/new");
+    axios.post("http://104.236.216.82:5000/palette/new");
     setPalettes([...palettes, newPalette]);
   };
 
   const deletePalette = (id) => {
     console.log(id);
-    axios.delete("http://localhost:5000/palette/" + id);
+    axios.delete("http://104.236.216.82:5000/palette/" + id);
     setPalettes(palettes.filter((palette) => palette.id !== id));
   };
 
   useEffect(() => {
     // window.localStorage.setItem("palettes", JSON.stringify(palettes));
     axios
-      .get("http://localhost:5000/palette/")
+      .get("http://104.236.216.82:5000/palette/")
       .then((response) => {
         setPalettes(response.data);
       })

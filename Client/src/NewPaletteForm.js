@@ -32,7 +32,7 @@ function NewPaletteForm(props) {
   const handleSubmit = (newPalette) => {
     newPalette.id = newPalette.paletteName.toLowerCase().replace(/ /g, "-");
     newPalette.colors = colors;
-    axios.post("http://localhost:5000/palette/new", newPalette);
+    axios.post("http://104.236.216.82:5000/palette/new", newPalette);
     props.savePalette(newPalette);
     props.history.push("/");
   };
